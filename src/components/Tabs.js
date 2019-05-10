@@ -10,6 +10,10 @@ import blue from '@material-ui/core/colors/blue';
 
 import GenKeyForm from "./GenKeyForm"
 import ShowKeys from "./ShowKeys"
+import ImportKeys from "./ImportKeys"
+import Encrypt from "./Encrypt"
+import Decrypt from "./Decrypt"
+import Sign from "./Sign"
 
 const theme = createMuiTheme({
     palette: {
@@ -44,7 +48,11 @@ function ScrollableTabsButtonAuto() {
 
     const tabs = [
         { label: "create key", component: GenKeyForm },
-        { label: "show keys", component: ShowKeys }
+        { label: "show keys", component: ShowKeys },
+        { label: "import keys", component: ImportKeys },
+        { label: "Encrypt", component: Encrypt },
+        { label: "Decrypt", component: Decrypt },
+        { label: "Sign", component: Sign }
     ]
 
     function handleChange(event, newValue) {

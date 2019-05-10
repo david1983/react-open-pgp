@@ -3,7 +3,8 @@ import { observer, inject } from "mobx-react";
 
 export default inject("Main")(
     observer(props => {
-        const { key } = props.Main.data;
+        const { Main } = props
+        const { key } = Main.data;
         if (!key) return <div>key not available</div>;
         return (
             <div>
@@ -15,7 +16,8 @@ export default inject("Main")(
                     k => (
                         <div key={k}>
                             <h5>{k}</h5>
-                            <pre>{key[k]}</pre>
+                            <textarea onChange={e => Main.importKey(k, e.target.value)}>
+                            </textarea>
                         </div>
                     ))}
             </div>

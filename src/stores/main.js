@@ -7,7 +7,8 @@ class Main {
             name: "",
             pass: "",
             key: {},
-            loading: false
+            loading: false,
+            generated: false
         });
     }
 
@@ -17,6 +18,20 @@ class Main {
 
     setPass(pass) {
         this.data.pass = pass;
+    }
+
+    resetKeys() {
+        this.data = {
+            name: "",
+            pass: "",
+            key: {},
+            loading: false,
+            generated: false
+        }
+    }
+
+    importKey(k, v) {
+        this.data.key[k] = v
     }
 
     genKey() {
@@ -29,6 +44,7 @@ class Main {
         };
         openpgp.generateKey(options).then(key => {
             this.data.loading = false
+            this.data.generated = true
             this.data.key = key;
         });
     }
