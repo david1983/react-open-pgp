@@ -1,1 +1,1 @@
-# react-open-gpg
+# react-open-pgp
